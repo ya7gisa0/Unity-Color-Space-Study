@@ -28,7 +28,7 @@ RenderSettings:
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 2d151bb16852b7f42bd058a5b37f93ae, type: 2}
   m_HaloStrength: 0.5
-  m_FlareStrength: 1
+  m_FlareStrength: 0
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
@@ -928,7 +928,7 @@ GameObject:
   - component: {fileID: 954346754}
   - component: {fileID: 954346753}
   - component: {fileID: 954346757}
-  - component: {fileID: 954346758}
+  - component: {fileID: 954346759}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1012,17 +1012,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 8515d292c6af6084284013e400bd8d8f, type: 2}
---- !u!114 &954346758
+--- !u!114 &954346759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 954346752}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ca2da45223eaca49811e208cc977fae, type: 3}
+  m_Script: {fileID: 11500000, guid: 3069d0e4649f6b84ea068217ddd2b5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intensity: 0
 --- !u!1 &1086091689
 GameObject:
   m_ObjectHideFlags: 0
