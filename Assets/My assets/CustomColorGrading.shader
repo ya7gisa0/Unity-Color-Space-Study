@@ -1,8 +1,11 @@
-﻿Shader "Hidden/CustomColorGrading"
+﻿// This shader is hugely based on "saturation" by megaloler (https://www.shadertoy.com/view/XttGWB)
+
+Shader "Hidden/CustomColorGrading"
 {
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
+		_saturation("saturation value", Float) = 0.3
 	}
 	SubShader
 	{
@@ -38,13 +41,26 @@
 			}
 			
 			sampler2D _MainTex;
+			float _saturation;
+
+			float3 applySaturation(float3 col) {
+				float saturationScale = 0.3; //_saturation; you could tweak the saturation value in the editor if you like
+
+				float average = (col.x + col.y + col.z) / 3.0;
+				float xd = average - col.x;
+				float yd = average - col.y;
+				float zd = average - col.z;
+				col.x += xd * -saturationScale;
+				col.y += yd * -saturationScale;
+				col.z += zd * -saturationScale;
+				return col;
+			}
 
 			fixed4 frag (v2f i) : SV_Target
 			{
 				fixed4 col = tex2D(_MainTex, i.uv);
-				// just invert the colors
-				col.rgb = 1 - col.rgb;
-				return col;
+				float3 saturatedColor = applySaturation(col.rgb);
+				return fixed4(saturatedColor, 1.0);
 			}
 			ENDCG
 		}
