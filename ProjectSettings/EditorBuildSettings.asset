@@ -6,5 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/scenes/minimal reflection.unity
-    guid: cf669f604cc6c8a4fa3a751a9d593bee
+    path: Assets/scenes/minimal reflection purple.unity
+    guid: 840b93ccb1745f649a015037d1317034
